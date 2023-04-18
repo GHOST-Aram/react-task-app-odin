@@ -8,7 +8,13 @@ function App() {
 
   const [taskText, setTaskText] = useState('')
 
+  // Delete specific task matching id in argument
+  const deleteTask = (id) =>{
+    // Filter out task with provided id
+    setTasks(tasks.filter(task => task.id !== id))
+  }
 
+  // Save new task
   const saveTasks = () =>{
     setTasks([...tasks, {id: uniqid(), text: taskText}])
     setTaskText('')
@@ -17,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Form onSave = {saveTasks} taskText={taskText} onTextChange ={setTaskText}/>
-      <Tasks tasks={tasks}/>
+      <Tasks deleteTask={deleteTask} tasks={tasks}/>
     </div>
   );
 }
