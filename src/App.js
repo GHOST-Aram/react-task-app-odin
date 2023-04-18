@@ -5,11 +5,12 @@ import Tasks from './components/tasks';
 function App() {
   const [tasks, setTasks] = useState([])
 
-  const [taskText, setTaskText] = useState('tEXT100')
+  const [taskText, setTaskText] = useState('')
 
 
   const saveTasks = () =>{
     setTasks([...tasks, {id: tasks.length, text: taskText}])
+    setTaskText('')
   }
   
   return (
