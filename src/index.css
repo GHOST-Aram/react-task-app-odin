@@ -1,11 +1,13 @@
 :root{
+  --dark-color: rgb(1, 1, 28);
+  --large-radius:8px;
+  --large-font: 1.2rem;
   --light-gray-color: rgb(179, 176, 176);
   --light-color: rgb(223, 217, 217);
   --medium-radius: 6px;
-  --small-radius:4px;
-  --large-radius:8px;
-  --dark-color: rgb(1, 1, 28);
   --slate-color:rgb(228, 188, 114);
+  --small-radius:4px;
+
 }
 
 *{
@@ -18,6 +20,9 @@
 }
 .bg-gray{
   background-color: gray;
+}
+.bg-green-500{
+  background-color: rgb(34 197 94);
 }
 .bg-light-gray{
   background-color: var(--light-gray-color);
@@ -102,6 +107,9 @@ li{
 }
 .text-light{
   color: var(--light-color);
+}
+.text-lg{
+  font-size: var(--large-font);
 }
 .text-red-500{
   color: rgb(220 38 38);
