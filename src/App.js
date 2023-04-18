@@ -28,18 +28,21 @@ function App() {
   }
   // Initiatiate task editing with specified id if Edit task button is clicked
   const initiateEditing = (id)=> {
-    // Invert state of isEditing
-    setIsEditing(!isEditing)
-
+    
     //Get task to be edited
     const taskToEdit = getTask(id)
+    
+    // Edit one text at a time
+    if(!taskText){
+      // Invert state of isEditing
+      setIsEditing(!isEditing)
+      // Populate Textbox with text of task to be edited
+      setTaskText(taskToEdit.text)
+  
+      // Filter out task to be edited from tasks
+      setTasks(tasks.filter(task => task.id !== id))
+    }
 
-    console.log(taskToEdit)
-    // Populate Textbox with text of task to be edited
-    setTaskText(taskToEdit.text)
-
-    // Filter out task to be edited from tasks
-    setTasks(tasks.filter(task => task.id !== id))
   }
 
   // Save new task
