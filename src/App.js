@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Form from './components/form';
 import Tasks from './components/tasks';
+import uniqid from "uniqid"
 function App() {
   const [tasks, setTasks] = useState([])
 
@@ -9,7 +10,7 @@ function App() {
 
 
   const saveTasks = () =>{
-    setTasks([...tasks, {id: tasks.length, text: taskText}])
+    setTasks([...tasks, {id: uniqid(), text: taskText}])
     setTaskText('')
   }
   

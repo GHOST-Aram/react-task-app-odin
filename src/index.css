@@ -55,8 +55,14 @@ code {
 .flex-row{
   flex-direction: row;
 }
+.font-light{
+  font-weight: 400;
+}
 input[type=text]::placeholder{
   color: var(--dark-color);
+}
+.items-center{
+  align-items: center;
 }
 .justify-between{
   justify-content: space-between;
@@ -96,6 +102,9 @@ li{
 }
 .text-light{
   color: var(--light-color);
+}
+.text-red-500{
+  color: rgb(220 38 38);
 }
 li:nth-child(even){
   background-color: var(--slate-color);
