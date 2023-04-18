@@ -18,10 +18,30 @@ function App() {
     setTasks(tasks.filter(task => task.id !== id))
   }
 
-  // Edit task with specified id
-  const initiateEditing = (id)=> {
-
+  // return task with specified id in tasks array
+  const getTask = (id) => {
+    let taskToEdit = null
+    tasks.forEach(task =>{
+      if(task.id === id){taskToEdit = task }
+    })
+    return taskToEdit
   }
+  // Initiatiate task editing with specified id if Edit task button is clicked
+  const initiateEditing = (id)=> {
+    // Invert state of isEditing
+    setIsEditing(!isEditing)
+
+    //Get task to be edited
+    const taskToEdit = getTask(id)
+
+    console.log(taskToEdit)
+    // Populate Textbox with text of task to be edited
+    setTaskText(taskToEdit.text)
+
+    // Filter out task to be edited from tasks
+    setTasks(tasks.filter(task => task.id !== id))
+  }
+
   // Save new task
   const saveTasks = () =>{
     setTasks([...tasks, {id: uniqid(), text: taskText}])
