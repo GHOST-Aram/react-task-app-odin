@@ -6,7 +6,11 @@ import uniqid from "uniqid"
 function App() {
   const [tasks, setTasks] = useState([])
 
+  // Task.test
   const [taskText, setTaskText] = useState('')
+
+  // Editing state
+  const [isEditing, setIsEditing] = useState(false)
 
   // Delete specific task matching id in argument
   const deleteTask = (id) =>{
@@ -14,16 +18,22 @@ function App() {
     setTasks(tasks.filter(task => task.id !== id))
   }
 
+  // Edit task with specified id
+  const initiateEditing = (id)=> {
+
+  }
   // Save new task
   const saveTasks = () =>{
     setTasks([...tasks, {id: uniqid(), text: taskText}])
     setTaskText('')
   }
+
   
   return (
     <div className="App">
-      <Form onSave = {saveTasks} taskText={taskText} onTextChange ={setTaskText}/>
-      <Tasks deleteTask={deleteTask} tasks={tasks}/>
+      <Form onSave = {saveTasks} taskText={taskText} 
+      onTextChange ={setTaskText} isEditing={isEditing}/>
+      <Tasks deleteTask={deleteTask} editTask={initiateEditing} tasks={tasks}/>
     </div>
   );
 }
