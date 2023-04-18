@@ -75,6 +75,9 @@ input[type=text]::placeholder{
 li{
   list-style: none;
 }
+.mx-8{
+  margin-inline: 1rem;
+}
 .outline-none:focus{
   outline: none;
 }
@@ -101,6 +104,9 @@ li{
 }
 .text-green-500{
   color: rgb(34 197 94);
+}
+.text-yellow-500{
+  color: rgb(234 179 8);
 }
 .text-left{
   text-align: left;
